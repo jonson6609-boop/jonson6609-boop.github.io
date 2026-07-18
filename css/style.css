@@ -13,6 +13,8 @@
   --teal: #2F6F5E;
   --teal-dark: #1F4E42;
   --gold: #D9A441;
+  --coral: #C1502E;
+  --blue: #4C6FA5;
   --line: #E4E0D4;
   --radius: 4px;
   --max: 880px;
@@ -75,21 +77,41 @@ nav.main-nav a:hover { color: var(--teal-dark); text-decoration: none; }
 
 /* ---------- hero ---------- */
 .hero {
-  border-bottom: 1px solid var(--line);
-  padding: 56px 0 48px;
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(135deg, var(--teal-dark) 0%, var(--teal) 55%, #3C8271 100%);
+  padding: 60px 0 54px;
+}
+.hero .wrap { position: relative; z-index: 2; display: flex; align-items: center; gap: 40px; }
+.hero-copy { flex: 1 1 auto; min-width: 0; }
+.hero-art { flex: 0 0 220px; display: flex; justify-content: center; }
+.hero-art svg { width: 100%; height: auto; max-width: 220px; }
+@media (max-width: 720px) {
+  .hero .wrap { flex-direction: column-reverse; gap: 24px; text-align: left; }
+  .hero-art { flex: 0 0 auto; }
+  .hero-art svg { max-width: 160px; }
 }
 .hero .eyebrow {
   font-family: 'IBM Plex Mono', monospace;
   font-size: .78rem; letter-spacing: .08em; text-transform: uppercase;
-  color: var(--teal); display: block; margin-bottom: 10px;
+  color: var(--gold); display: block; margin-bottom: 10px;
 }
-.hero h1 { font-size: clamp(2rem, 5vw, 2.9rem); max-width: 12ch; }
-.hero p.lede { max-width: 52ch; color: var(--ink-soft); font-size: 1.1rem; margin-top: 14px; }
+.hero h1 { font-size: clamp(2.1rem, 5vw, 3rem); max-width: 12ch; color: #FFFFFF; }
+.hero p.lede { max-width: 52ch; color: #E7F1EC; font-size: 1.1rem; margin-top: 14px; }
+
+/* decorative blobs behind hero content */
+.hero::before, .hero::after {
+  content: ""; position: absolute; border-radius: 50%; z-index: 1;
+  opacity: .35; filter: blur(2px);
+}
+.hero::before { width: 260px; height: 260px; background: var(--gold); top: -90px; right: -60px; }
+.hero::after { width: 180px; height: 180px; background: var(--coral); bottom: -80px; right: 220px; opacity: .25; }
+@media (max-width: 720px) { .hero::after { display: none; } }
 
 /* ---------- tip ribbon (signature element) ---------- */
 .tip-ribbon {
   display: inline-flex; align-items: center; gap: 10px;
-  background: var(--ink); color: var(--paper);
+  background: rgba(0,0,0,.22); color: #FFFFFF;
   padding: 8px 16px; border-radius: 999px;
   font-family: 'IBM Plex Mono', monospace; font-size: .78rem;
   margin-bottom: 20px;
@@ -113,21 +135,43 @@ nav.main-nav a:hover { color: var(--teal-dark); text-decoration: none; }
 .card {
   background: var(--paper-raised);
   border: 1px solid var(--line);
+  border-top: 4px solid var(--teal);
   border-radius: var(--radius);
   padding: 22px;
   display: flex; flex-direction: column; gap: 10px;
-  transition: border-color .15s ease, transform .15s ease;
+  transition: border-color .15s ease, transform .15s ease, box-shadow .15s ease;
 }
-.card:hover { border-color: var(--teal); transform: translateY(-2px); }
+.card:hover { transform: translateY(-3px); box-shadow: 0 10px 24px rgba(30,42,40,.10); }
 .card .tag {
+  display: inline-flex; align-items: center; gap: 6px;
   font-family: 'IBM Plex Mono', monospace; font-size: .72rem;
   text-transform: uppercase; letter-spacing: .06em; color: var(--teal);
+}
+.card .tag::before {
+  content: ""; width: 9px; height: 9px; border-radius: 50%; background: var(--teal);
 }
 .card h3 { font-size: 1.2rem; }
 .card h3 a { color: var(--ink); }
 .card h3 a:hover { color: var(--teal-dark); text-decoration: none; }
 .card p { color: var(--ink-soft); font-size: .95rem; margin: 0; }
 .card .meta { font-size: .8rem; color: #8A8578; font-family: 'IBM Plex Mono', monospace; }
+
+/* category color coding */
+.card-money { border-top-color: var(--gold); }
+.card-money .tag { color: #A9781F; }
+.card-money .tag::before { background: var(--gold); }
+
+.card-home { border-top-color: var(--teal); }
+.card-home .tag { color: var(--teal-dark); }
+.card-home .tag::before { background: var(--teal); }
+
+.card-focus { border-top-color: var(--blue); }
+.card-focus .tag { color: var(--blue); }
+.card-focus .tag::before { background: var(--blue); }
+
+.card-wellbeing { border-top-color: var(--coral); }
+.card-wellbeing .tag { color: var(--coral); }
+.card-wellbeing .tag::before { background: var(--coral); }
 
 /* ---------- article page ---------- */
 article.post {
