@@ -1,12 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://YOURDOMAIN.example/</loc><changefreq>weekly</changefreq><priority>1.0</priority></url>
-  <url><loc>https://YOURDOMAIN.example/about.html</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
-  <url><loc>https://YOURDOMAIN.example/contact.html</loc><changefreq>monthly</changefreq><priority>0.3</priority></url>
-  <url><loc>https://YOURDOMAIN.example/privacy-policy.html</loc><changefreq>yearly</changefreq><priority>0.2</priority></url>
-  <url><loc>https://YOURDOMAIN.example/terms.html</loc><changefreq>yearly</changefreq><priority>0.2</priority></url>
-  <url><loc>https://YOURDOMAIN.example/posts/five-minute-budget-check.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://YOURDOMAIN.example/posts/one-shelf-declutter-method.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://YOURDOMAIN.example/posts/two-minute-morning-routine.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://YOURDOMAIN.example/posts/better-sleep-without-gadgets.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://jonson6609-boop.github.io/</loc><changefreq>weekly</changefreq><priority>1.0</priority></url>
+  <url><loc>https://jonson6609-boop.github.io/about.html</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://jonson6609-boop.github.io/contact.html</loc><changefreq>monthly</changefreq><priority>0.3</priority></url>
+  <url><loc>https://jonson6609-boop.github.io/privacy-policy.html</loc><changefreq>yearly</changefreq><priority>0.2</priority></url>
+  <url><loc>https://jonson6609-boop.github.io/terms.html</loc><changefreq>yearly</changefreq><priority>0.2</priority></url>
+  <url><loc>https://jonson6609-boop.github.io/posts/five-minute-budget-check.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://jonson6609-boop.github.io/posts/one-shelf-declutter-method.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://jonson6609-boop.github.io/posts/two-minute-morning-routine.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://jonson6609-boop.github.io/posts/better-sleep-without-gadgets.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://jonson6609-boop.github.io/posts/staying-focused-working-from-home.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://jonson6609-boop.github.io/posts/reducing-screen-time-before-bed.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
 </urlset>
