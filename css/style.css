@@ -1,7 +1,7 @@
 /* =========================================================
    THE SMALL FIX — stylesheet
    Palette:  ink #1E2A28 | paper #FBFAF6 | teal #2F6F5E
-             gold #D9A441 | line #E4E0D4
+             gold #D9A441 | coral #C1502E | blue #4C6FA5 | line #E4E0D4
    Type: 'Fraunces' (display) / 'Inter' (body) / 'IBM Plex Mono' (meta)
    ========================================================= */
 
@@ -48,7 +48,6 @@ a:focus-visible, button:focus-visible { outline: 3px solid var(--gold); outline-
 
 .wrap { max-width: var(--max); margin: 0 auto; padding: 0 24px; }
 
-/* ---------- header ---------- */
 .site-header {
   border-bottom: 1px solid var(--line);
   background: var(--paper);
@@ -70,12 +69,9 @@ a:focus-visible, button:focus-visible { outline: 3px solid var(--gold); outline-
 }
 .logo:hover { text-decoration: none; }
 nav.main-nav { display: flex; gap: 22px; }
-nav.main-nav a {
-  color: var(--ink-soft); font-size: .95rem; font-weight: 500;
-}
+nav.main-nav a { color: var(--ink-soft); font-size: .95rem; font-weight: 500; }
 nav.main-nav a:hover { color: var(--teal-dark); text-decoration: none; }
 
-/* ---------- hero ---------- */
 .hero {
   position: relative;
   overflow: hidden;
@@ -99,7 +95,6 @@ nav.main-nav a:hover { color: var(--teal-dark); text-decoration: none; }
 .hero h1 { font-size: clamp(2.1rem, 5vw, 3rem); max-width: 12ch; color: #FFFFFF; }
 .hero p.lede { max-width: 52ch; color: #E7F1EC; font-size: 1.1rem; margin-top: 14px; }
 
-/* decorative blobs behind hero content */
 .hero::before, .hero::after {
   content: ""; position: absolute; border-radius: 50%; z-index: 1;
   opacity: .35; filter: blur(2px);
@@ -108,7 +103,6 @@ nav.main-nav a:hover { color: var(--teal-dark); text-decoration: none; }
 .hero::after { width: 180px; height: 180px; background: var(--coral); bottom: -80px; right: 220px; opacity: .25; }
 @media (max-width: 720px) { .hero::after { display: none; } }
 
-/* ---------- tip ribbon (signature element) ---------- */
 .tip-ribbon {
   display: inline-flex; align-items: center; gap: 10px;
   background: rgba(0,0,0,.22); color: #FFFFFF;
@@ -118,18 +112,11 @@ nav.main-nav a:hover { color: var(--teal-dark); text-decoration: none; }
 }
 .tip-ribbon .num { color: var(--gold); font-weight: 700; }
 
-/* ---------- post grid ---------- */
-.section-title {
-  display: flex; align-items: baseline; justify-content: space-between;
-  margin: 56px 0 20px;
-}
+.section-title { display: flex; align-items: baseline; justify-content: space-between; margin: 56px 0 20px; }
 .section-title h2 { font-size: 1.4rem; }
 .section-title a { font-size: .9rem; }
 
-.post-grid {
-  display: grid; grid-template-columns: repeat(2, 1fr); gap: 22px;
-  margin-bottom: 40px;
-}
+.post-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 22px; margin-bottom: 40px; }
 @media (max-width: 640px) { .post-grid { grid-template-columns: 1fr; } }
 
 .card {
@@ -147,16 +134,13 @@ nav.main-nav a:hover { color: var(--teal-dark); text-decoration: none; }
   font-family: 'IBM Plex Mono', monospace; font-size: .72rem;
   text-transform: uppercase; letter-spacing: .06em; color: var(--teal);
 }
-.card .tag::before {
-  content: ""; width: 9px; height: 9px; border-radius: 50%; background: var(--teal);
-}
+.card .tag::before { content: ""; width: 9px; height: 9px; border-radius: 50%; background: var(--teal); }
 .card h3 { font-size: 1.2rem; }
 .card h3 a { color: var(--ink); }
 .card h3 a:hover { color: var(--teal-dark); text-decoration: none; }
 .card p { color: var(--ink-soft); font-size: .95rem; margin: 0; }
 .card .meta { font-size: .8rem; color: #8A8578; font-family: 'IBM Plex Mono', monospace; }
 
-/* category color coding */
 .card-money { border-top-color: var(--gold); }
 .card-money .tag { color: #A9781F; }
 .card-money .tag::before { background: var(--gold); }
@@ -173,11 +157,7 @@ nav.main-nav a:hover { color: var(--teal-dark); text-decoration: none; }
 .card-wellbeing .tag { color: var(--coral); }
 .card-wellbeing .tag::before { background: var(--coral); }
 
-/* ---------- article page ---------- */
-article.post {
-  padding: 44px 0 20px;
-  max-width: 68ch; margin: 0 auto;
-}
+article.post { padding-top: 44px; padding-bottom: 20px; max-width: 68ch; margin: 0 auto; }
 article.post .eyebrow {
   font-family: 'IBM Plex Mono', monospace; font-size: .78rem;
   color: var(--teal); text-transform: uppercase; letter-spacing: .06em;
@@ -198,15 +178,98 @@ article.post blockquote {
   font-style: italic;
 }
 
+/* ---------- photo-banner post template ---------- */
+.post-photo-banner {
+  width: 100%; max-height: 340px; overflow: hidden;
+  border-radius: var(--radius); margin: 20px 0;
+}
+.post-photo-banner img {
+  width: 100%; height: 340px; object-fit: cover; display: block;
+}
+.photo-credit {
+  font-family: 'IBM Plex Mono', monospace; font-size: .72rem;
+  color: #8A8578; margin-top: -14px; margin-bottom: 24px;
+}
+.lede-line {
+  font-family: 'Fraunces', serif; font-size: 1.25rem; font-weight: 600;
+  color: var(--ink); margin: 1.2em 0;
+}
+.step-item { display: flex; gap: 16px; margin: 1.8em 0; align-items: flex-start; }
+.step-item .num-badge {
+  flex: 0 0 40px; width: 40px; height: 40px; border-radius: 50%;
+  background: var(--blue); color: #fff; display: flex; align-items: center;
+  justify-content: center; font-family: 'IBM Plex Mono', monospace;
+  font-weight: 700; font-size: 1.05rem;
+}
+.step-item .step-body h3 { font-size: 1.15rem; margin: 0 0 .3em; }
+.step-item .step-body p { margin: 0; }
+.recap-box {
+  background: var(--paper-raised); border: 1px solid var(--line);
+  border-left: 4px solid var(--blue); border-radius: var(--radius);
+  padding: 20px 22px; margin: 2em 0;
+}
+.recap-box h3 {
+  font-family: 'IBM Plex Mono', monospace; font-size: .82rem;
+  text-transform: uppercase; letter-spacing: .06em; color: var(--blue);
+  margin: 0 0 .8em;
+}
+.recap-box ul { margin: 0; padding-left: 1.2em; }
+.recap-box li { margin: .3em 0; font-size: .95rem; }
+
 /* ---------- ad slots ---------- */
+/* ---------- photo banner (new template variant) ---------- */
+article.post .post-photo {
+  width: 100%;
+  height: 320px;
+  object-fit: cover;
+  border-radius: var(--radius);
+  margin: 20px 0 6px;
+  display: block;
+}
+article.post .photo-credit {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: .72rem;
+  color: #B3AD9C;
+  margin: 0 0 20px;
+}
+
+/* ---------- numbered-step list (new template variant) ---------- */
+article.post ol.step-list {
+  list-style: none;
+  padding: 0;
+  margin: 1.6em 0;
+  counter-reset: step;
+}
+article.post ol.step-list li {
+  counter-increment: step;
+  position: relative;
+  padding: 18px 20px 18px 60px;
+  margin: 0 0 14px;
+  background: var(--paper-raised);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+}
+article.post ol.step-list li::before {
+  content: counter(step);
+  position: absolute;
+  left: 18px; top: 18px;
+  width: 28px; height: 28px;
+  border-radius: 50%;
+  background: var(--teal);
+  color: #fff;
+  font-family: 'IBM Plex Mono', monospace;
+  font-weight: 700;
+  font-size: .85rem;
+  display: flex; align-items: center; justify-content: center;
+}
+article.post ol.step-list li strong { display: block; margin-bottom: 4px; font-size: 1.02rem; }
+
 .ad-slot {
-  margin: 32px 0; padding: 10px; text-align: center;
   border: 1px dashed var(--line); border-radius: var(--radius);
   color: #B3AD9C; font-family: 'IBM Plex Mono', monospace; font-size: .75rem;
   min-height: 100px; display: flex; align-items: center; justify-content: center;
 }
 
-/* ---------- author box ---------- */
 .author-box {
   display: flex; gap: 14px; align-items: center;
   margin-top: 40px; padding: 18px; background: var(--paper-raised);
@@ -221,12 +284,10 @@ article.post blockquote {
 .author-box .name { font-weight: 600; font-size: .92rem; }
 .author-box .bio { font-size: .85rem; color: var(--ink-soft); margin: 0; }
 
-/* ---------- generic page ---------- */
-.page { padding: 44px 0; max-width: 68ch; margin: 0 auto; }
+.page { padding-top: 44px; padding-bottom: 44px; max-width: 68ch; margin: 0 auto; }
 .page h1 { margin-bottom: .6em; }
 .page h2 { margin-top: 1.4em; }
 
-/* ---------- footer ---------- */
 footer.site-footer {
   border-top: 1px solid var(--line); margin-top: 60px;
   padding: 34px 0; color: var(--ink-soft); font-size: .88rem;
@@ -237,7 +298,6 @@ footer.site-footer .wrap {
 footer.site-footer nav { display: flex; gap: 16px; }
 footer.site-footer a { color: var(--ink-soft); }
 
-/* ---------- utility ---------- */
 .btn {
   display: inline-block; background: var(--teal); color: #fff;
   padding: 10px 20px; border-radius: var(--radius); font-weight: 600;
