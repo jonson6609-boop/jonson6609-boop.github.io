@@ -1,0 +1,32 @@
+/* ---------- Auto & Car Finance category ---------- */
+:root {
+  --auto: #37474F;
+}
+.card-auto { border-top-color: var(--auto); }
+.card-auto .tag { color: var(--auto); }
+.card-auto .tag::before { background: var(--auto); }
+
+article.post .eyebrow.eyebrow-auto { color: var(--auto); }
+
+/* FAQ block used in the new fuller article format */
+article.post .faq-block {
+  margin: 2em 0; padding: 20px 22px;
+  background: var(--paper-raised); border: 1px solid var(--line);
+  border-radius: var(--radius);
+}
+article.post .faq-block h2 {
+  margin-top: 0; font-size: 1.2rem;
+}
+article.post .faq-item { margin: 1.1em 0; }
+article.post .faq-item .q {
+  font-weight: 600; margin-bottom: .3em; display: block;
+}
+article.post .faq-item .a { margin: 0; color: var(--ink-soft); }
+
+/* Related posts block */
+article.post .related-posts {
+  margin: 2.5em 0; padding-top: 1.5em; border-top: 1px solid var(--line);
+}
+article.post .related-posts h2 { font-size: 1.15rem; margin-bottom: .8em; }
+article.post .related-posts ul { list-style: none; padding: 0; margin: 0; }
+article.post .related-posts li { margin: .5em 0; }
