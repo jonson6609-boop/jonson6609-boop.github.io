@@ -1,7 +1,8 @@
 /* =========================================================
    THE SMALL FIX — stylesheet
    Palette:  ink #1E2A28 | paper #FBFAF6 | teal #2F6F5E
-             gold #D9A441 | coral #C1502E | blue #4C6FA5 | line #E4E0D4
+             gold #D9A441 | coral #C1502E | blue #4C6FA5
+             auto #37474F | line #E4E0D4
    Type: 'Fraunces' (display) / 'Inter' (body) / 'IBM Plex Mono' (meta)
    ========================================================= */
 
@@ -15,6 +16,7 @@
   --gold: #D9A441;
   --coral: #C1502E;
   --blue: #4C6FA5;
+  --auto: #37474F;
   --line: #E4E0D4;
   --radius: 4px;
   --max: 880px;
@@ -71,6 +73,15 @@ a:focus-visible, button:focus-visible { outline: 3px solid var(--gold); outline-
 nav.main-nav { display: flex; gap: 22px; }
 nav.main-nav a { color: var(--ink-soft); font-size: .95rem; font-weight: 500; }
 nav.main-nav a:hover { color: var(--teal-dark); text-decoration: none; }
+
+@media (max-width: 560px) {
+  .site-header .wrap { padding-top: 12px; padding-bottom: 12px; flex-wrap: nowrap; }
+  .logo { font-size: 1.05rem; gap: 6px; white-space: nowrap; }
+  .logo .mark { width: 22px; height: 22px; font-size: .7rem; }
+  nav.main-nav { gap: 12px; overflow-x: auto; -webkit-overflow-scrolling: touch; scrollbar-width: none; }
+  nav.main-nav::-webkit-scrollbar { display: none; }
+  nav.main-nav a { font-size: .82rem; white-space: nowrap; }
+}
 
 .hero {
   position: relative;
@@ -157,11 +168,16 @@ nav.main-nav a:hover { color: var(--teal-dark); text-decoration: none; }
 .card-wellbeing .tag { color: var(--coral); }
 .card-wellbeing .tag::before { background: var(--coral); }
 
+.card-auto { border-top-color: var(--auto); }
+.card-auto .tag { color: var(--auto); }
+.card-auto .tag::before { background: var(--auto); }
+
 article.post { padding-top: 44px; padding-bottom: 20px; max-width: 68ch; margin: 0 auto; }
 article.post .eyebrow {
   font-family: 'IBM Plex Mono', monospace; font-size: .78rem;
   color: var(--teal); text-transform: uppercase; letter-spacing: .06em;
 }
+article.post .eyebrow.eyebrow-auto { color: var(--auto); }
 article.post h1 { font-size: clamp(1.8rem, 4vw, 2.5rem); margin-top: 10px; }
 article.post .meta {
   font-family: 'IBM Plex Mono', monospace; font-size: .82rem;
@@ -178,46 +194,7 @@ article.post blockquote {
   font-style: italic;
 }
 
-/* ---------- photo-banner post template ---------- */
-.post-photo-banner {
-  width: 100%; max-height: 340px; overflow: hidden;
-  border-radius: var(--radius); margin: 20px 0;
-}
-.post-photo-banner img {
-  width: 100%; height: 340px; object-fit: cover; display: block;
-}
-.photo-credit {
-  font-family: 'IBM Plex Mono', monospace; font-size: .72rem;
-  color: #8A8578; margin-top: -14px; margin-bottom: 24px;
-}
-.lede-line {
-  font-family: 'Fraunces', serif; font-size: 1.25rem; font-weight: 600;
-  color: var(--ink); margin: 1.2em 0;
-}
-.step-item { display: flex; gap: 16px; margin: 1.8em 0; align-items: flex-start; }
-.step-item .num-badge {
-  flex: 0 0 40px; width: 40px; height: 40px; border-radius: 50%;
-  background: var(--blue); color: #fff; display: flex; align-items: center;
-  justify-content: center; font-family: 'IBM Plex Mono', monospace;
-  font-weight: 700; font-size: 1.05rem;
-}
-.step-item .step-body h3 { font-size: 1.15rem; margin: 0 0 .3em; }
-.step-item .step-body p { margin: 0; }
-.recap-box {
-  background: var(--paper-raised); border: 1px solid var(--line);
-  border-left: 4px solid var(--blue); border-radius: var(--radius);
-  padding: 20px 22px; margin: 2em 0;
-}
-.recap-box h3 {
-  font-family: 'IBM Plex Mono', monospace; font-size: .82rem;
-  text-transform: uppercase; letter-spacing: .06em; color: var(--blue);
-  margin: 0 0 .8em;
-}
-.recap-box ul { margin: 0; padding-left: 1.2em; }
-.recap-box li { margin: .3em 0; font-size: .95rem; }
-
-/* ---------- ad slots ---------- */
-/* ---------- photo banner (new template variant) ---------- */
+/* ---------- photo banner (post template variant) ---------- */
 article.post .post-photo {
   width: 100%;
   height: 260px;
@@ -236,7 +213,7 @@ article.post .photo-credit {
   margin: 0 0 20px;
 }
 
-/* ---------- numbered-step list (new template variant) ---------- */
+/* ---------- numbered-step list (post template variant) ---------- */
 article.post ol.step-list {
   list-style: none;
   padding: 0;
@@ -267,10 +244,28 @@ article.post ol.step-list li::before {
 }
 article.post ol.step-list li strong { display: block; margin-bottom: 4px; font-size: 1.02rem; }
 
+/* ---------- FAQ block (Auto / long-form article format) ---------- */
+article.post .faq-block {
+  margin: 2em 0; padding: 20px 22px;
+  background: var(--paper-raised); border: 1px solid var(--line);
+  border-radius: var(--radius);
+}
+article.post .faq-block h2 { margin-top: 0; font-size: 1.2rem; }
+article.post .faq-item { margin: 1.1em 0; }
+article.post .faq-item .q { font-weight: 600; margin-bottom: .3em; display: block; }
+article.post .faq-item .a { margin: 0; color: var(--ink-soft); }
+
+/* ---------- related posts block ---------- */
+article.post .related-posts {
+  margin: 2.5em 0; padding-top: 1.5em; border-top: 1px solid var(--line);
+}
+article.post .related-posts h2 { font-size: 1.15rem; margin-bottom: .8em; }
+article.post .related-posts ul { list-style: none; padding: 0; margin: 0; }
+article.post .related-posts li { margin: .5em 0; }
+
+/* ---------- ad slots ---------- */
 .ad-slot {
-  border: 1px dashed var(--line); border-radius: var(--radius);
-  color: #B3AD9C; font-family: 'IBM Plex Mono', monospace; font-size: .75rem;
-  min-height: 100px; display: flex; align-items: center; justify-content: center;
+  display: none; /* hidden — Auto ads handles real placement; re-enable manual slots only if you switch to manual ad units */
 }
 
 .author-box {
