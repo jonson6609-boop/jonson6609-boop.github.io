@@ -74,6 +74,15 @@ nav.main-nav { display: flex; gap: 22px; }
 nav.main-nav a { color: var(--ink-soft); font-size: .95rem; font-weight: 500; }
 nav.main-nav a:hover { color: var(--teal-dark); text-decoration: none; }
 
+@media (max-width: 560px) {
+  .site-header .wrap { padding-top: 12px; padding-bottom: 12px; flex-wrap: nowrap; }
+  .logo { font-size: 1.05rem; gap: 6px; white-space: nowrap; }
+  .logo .mark { width: 22px; height: 22px; font-size: .7rem; }
+  nav.main-nav { gap: 12px; overflow-x: auto; -webkit-overflow-scrolling: touch; scrollbar-width: none; }
+  nav.main-nav::-webkit-scrollbar { display: none; }
+  nav.main-nav a { font-size: .82rem; white-space: nowrap; }
+}
+
 .hero {
   position: relative;
   overflow: hidden;
@@ -256,10 +265,14 @@ article.post .related-posts li { margin: .5em 0; }
 
 /* ---------- ad slots ---------- */
 .ad-slot {
-  margin: 32px 0; padding: 10px; text-align: center;
-  border: 1px dashed var(--line); border-radius: var(--radius);
-  color: #B3AD9C; font-family: 'IBM Plex Mono', monospace; font-size: .75rem;
-  min-height: 100px; display: flex; align-items: center; justify-content: center;
+  display: none; /* hidden — Auto ads handles real placement; re-enable manual slots only if you switch to manual ad units */
+}
+
+@media (max-width: 480px) {
+  .logo { font-size: 1.05rem; }
+  .logo .mark { width: 22px; height: 22px; font-size: .68rem; }
+  nav.main-nav { gap: 12px; }
+  nav.main-nav a { font-size: .8rem; }
 }
 
 .author-box {
