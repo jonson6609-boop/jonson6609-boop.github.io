@@ -35,6 +35,7 @@
   "description": "Practical, no-fluff tips for everyday life: money, home, productivity, wellbeing, and car ownership."
 }
 </script>
+<script defer src="js-mobile-nav.js"></script>
 </head>
 <body>
 
@@ -42,11 +43,13 @@
   <div class="wrap">
     <a href="index.html" class="logo"><span class="mark">S</span>The Small Fix</a>
     <nav class="main-nav">
+      <a href="index.html">Home</a>
       <a href="money.html">Money</a>
-      <a href="home-tips.html">Home</a>
+      <a href="home-tips.html">Home Tips</a>
       <a href="wellbeing.html">Wellbeing</a>
       <a href="auto.html">Auto</a>
       <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
     </nav>
   </div>
 </header>
@@ -56,7 +59,8 @@
     <div class="hero-copy">
       <span class="tip-ribbon"><span class="num">TIP #001</span> · updated weekly</span>
       <h1>Small fixes. Real difference.</h1>
-      <p class="lede">Short, practical tips for money, home, focus, wellbeing, and car ownership — the kind you can actually use before lunch.</p>
+      <p class="lede">Practical tips for Money • Home • Wellbeing • Auto — the kind you can actually use before lunch.</p>
+      <a href="#featured" class="hero-btn">Explore guides ↓</a>
     </div>
     <div class="hero-art">
       <svg viewBox="0 0 220 220" xmlns="http://www.w3.org/2000/svg">
@@ -87,25 +91,33 @@
     <h2>Popular categories</h2>
   </div>
   <div class="post-grid" style="grid-template-columns:repeat(4,1fr);margin-bottom:56px;">
-    <a href="money.html" class="card card-money" style="text-decoration:none;text-align:center;">
-      <span class="tag" style="justify-content:center;">Money</span>
+    <a href="money.html" class="card card-money" style="text-decoration:none;">
+      <span class="tag">Money</span>
       <h3 style="font-size:1rem;">Budgeting & savings</h3>
+      <p style="font-size:.85rem;">Practical money habits that actually stick.</p>
+      <span class="meta">8 guides</span>
     </a>
-    <a href="home-tips.html" class="card card-home" style="text-decoration:none;text-align:center;">
-      <span class="tag" style="justify-content:center;">Home</span>
+    <a href="home-tips.html" class="card card-home" style="text-decoration:none;">
+      <span class="tag">Home</span>
       <h3 style="font-size:1rem;">Organization systems</h3>
+      <p style="font-size:.85rem;">Systems that survive a real, busy household.</p>
+      <span class="meta">6 guides</span>
     </a>
-    <a href="wellbeing.html" class="card card-wellbeing" style="text-decoration:none;text-align:center;">
-      <span class="tag" style="justify-content:center;">Wellbeing</span>
+    <a href="wellbeing.html" class="card card-wellbeing" style="text-decoration:none;">
+      <span class="tag">Wellbeing</span>
       <h3 style="font-size:1rem;">Focus & daily habits</h3>
+      <p style="font-size:.85rem;">Small habits for stress, sleep, and attention.</p>
+      <span class="meta">8 guides</span>
     </a>
-    <a href="auto.html" class="card card-auto" style="text-decoration:none;text-align:center;">
-      <span class="tag" style="justify-content:center;">Auto</span>
+    <a href="auto.html" class="card card-auto" style="text-decoration:none;">
+      <span class="tag">Auto & Car Finance</span>
       <h3 style="font-size:1rem;">Car finance & upkeep</h3>
+      <p style="font-size:.85rem;">Buying, financing, and maintaining a car.</p>
+      <span class="meta">3 guides</span>
     </a>
   </div>
 
-  <div class="section-title">
+  <div class="section-title" id="featured">
     <h2>Featured guides</h2>
   </div>
   <div class="post-grid" style="margin-bottom:56px;">
